@@ -6,7 +6,7 @@ A simple Cryptocurrency Web App made using Python Streamlit which shows the pric
 ## Deployment
 Deployed to [heroku](https://crypto-zr.herokuapp.com/)
 
-# Versioning
+## Versioning
 * Based on Streamlit 1.3.1
 * Made with Python 3.9.6
 
