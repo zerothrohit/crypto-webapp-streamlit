@@ -23,7 +23,7 @@ _Shown are the Cryptocurrency closing price and graph_
 
 #sidebar
 st.sidebar.header('Select a cryptocurrency👆')
-currency = st.sidebar.selectbox('Cryptocurrency:', ('Bitcoin (BTC)', 'Ethereum (ETH)', 'Ripple (XRP)', 'Tether (USDT)', 'Polygon (MATIC)', 'DogeCoin (DOGE)', 'Shiba Inu (SHIB)', 'Solana (SOL)', 'Cardano (ADA)', 'Polkadot (DOT)', 'Litecoin (LTC)'))
+currency = st.sidebar.selectbox('Cryptocurrency:', ('Bitcoin (BTC)', 'Ethereum (ETH)', 'Ripple (XRP)', 'Tether (USDT)', 'Polygon (MATIC)', 'Dogecoin (DOGE)', 'Shiba Inu (SHIB)', 'Solana (SOL)', 'Cardano (ADA)', 'Polkadot (DOT)', 'Litecoin (LTC)'))
 currencytype = st.sidebar.selectbox('Currency:', ('INR (₹)', 'USD ($)'))
 if st.sidebar.button('Refresh Data'):
     raise RerunException(st._RerunData(None))
@@ -203,9 +203,9 @@ if currency == 'Cardano (ADA)':
 #Polkadot(DOT)
 if currency == 'Polkadot (DOT)':
     st.write("**Polkadot **" + "(**" + cs + "**)")
-    image = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/200x200/6636.png'))
+    image = Image.open(urlopen('https://www.freelogovectors.net/wp-content/uploads/2021/10/polkadot-logo-freelogovectors.net_.png'))
     #Display Image
-    st.image(image)
+    st.image(image, width=200)
     #Display Dataframe
     st.table(DOT)
     #Display Linechart
