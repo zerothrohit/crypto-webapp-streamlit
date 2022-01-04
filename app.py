@@ -23,7 +23,7 @@ _Shown are the Cryptocurrency closing price and graph_
 
 #sidebar
 st.sidebar.header('Select a cryptocurrency👆')
-currency = st.sidebar.selectbox('Cryptocurrency:', ('Bitcoin (BTC)', 'Ethereum (ETH)', 'Ripple (XRP)', 'Tether (USDT)', 'Polygon (MATIC)', 'Dogecoin (DOGE)', 'Shiba Inu (SHIB)', 'Solana (SOL)', 'Cardano (ADA)', 'Polkadot (DOT)', 'Litecoin (LTC)'))
+currency = st.sidebar.selectbox('Cryptocurrency:', ('Bitcoin (BTC)', 'Ethereum (ETH)', 'Ripple (XRP)', 'Tether (USDT)', 'Polygon (MATIC)', 'Dogecoin (DOGE)', 'Shiba Inu (SHIB)', 'Solana (SOL)', 'Cardano (ADA)', 'Polkadot (DOT)', 'Litecoin (LTC)', 'TRON (TRX)'))
 currencytype = st.sidebar.selectbox('Currency:', ('INR (₹)', 'USD ($)'))
 if st.sidebar.button('Refresh Data'):
     raise RerunException(st._RerunData(None))
@@ -48,6 +48,7 @@ Solana = 'SOL' + '-' + ct
 Cardano = 'ADA' + '-' + ct
 Polkadot = 'DOT' + '-' + ct
 Litecoin = 'LTC' + '-' + ct
+Tron = 'TRX' + '-' + ct
 
 BTC_Data = yf.Ticker(Bitcoin)
 ETH_Data = yf.Ticker(Ethereum)
@@ -60,6 +61,7 @@ SOL_Data = yf.Ticker(Solana)
 ADA_Data = yf.Ticker(Cardano)
 DOT_Data = yf.Ticker(Polkadot)
 LTC_Data = yf.Ticker(Litecoin)
+TRX_Data = yf.Ticker(Tron)
 
 BTC_History = BTC_Data.history(period="max")
 ETH_History = ETH_Data.history(period="max")
@@ -72,6 +74,7 @@ SOL_History = SOL_Data.history(period="max")
 ADA_History = ADA_Data.history(period="max")
 DOT_History = DOT_Data.history(period="max")
 LTC_History = LTC_Data.history(period="max")
+TRX_History = TRX_Data.history(period="max")
 #print(BTC_History)
 
 BTC = yf.download(Bitcoin, start=d, end=d)
@@ -85,6 +88,7 @@ SOL = yf.download(Solana, start=d, end=d)
 ADA = yf.download(Cardano, start=d, end=d)
 DOT = yf.download(Polkadot, start=d, end=d)
 LTC = yf.download(Litecoin, start=d, end=d)
+TRX = yf.download(Tron, start=d, end=d)
 
 #Bitcoin(BTC)
 if currency == 'Bitcoin (BTC)':
@@ -178,9 +182,9 @@ if currency == 'Shiba Inu (SHIB)':
 #Solana(SOL)
 if currency == 'Solana (SOL)':
     st.write("**Solana **" + "(**" + cs + "**)")
-    image = Image.open(urlopen('https://digitalcoinprice.com/assets/images/coins/200x200/solana.png'))
+    image = Image.open(urlopen('https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png'))
     #Display Image
-    st.image(image)
+    st.image(image, width=250)
     #Display Dataframe
     st.table(SOL)
     #Display Linechart
@@ -225,5 +229,18 @@ if currency == 'Litecoin (LTC)':
     fig = px.line(LTC_History, x=LTC_History.index, y='Close', width=850, height=600)
     st.plotly_chart(fig)
 
+#TRON(TRX)
+if currency == 'TRON (TRX)':
+    st.write("**TRON **" + "(**" + cs + "**)")
+    image = Image.open(urlopen('https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png'))
+    #Display Image
+    st.image(image)
+    #Display Dataframe
+    st.table(TRX)
+    #Display Linechart
+    fig = px.line(TRX_History, x=TRX_History.index, y='Close', width=850, height=600)
+    st.plotly_chart(fig)
+
 st.sidebar.subheader(
     """Created by [Rohit Wahwal](https://github.com/zerothrohit)😊 """)
+
