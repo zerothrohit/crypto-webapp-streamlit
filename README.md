@@ -26,4 +26,4 @@ pip install plotly
 
 ![alt text](https://github.com/zerothrohit/crypto-webapp-streamlit/blob/main/media/2.jpg "Cryptocurrency Web App")
 
-Image(Logo) Credit's: [CoinMarketCap](https://coinmarketcap.com/), [Coinopsy](https://www.coinopsy.com/), [Digitalcoin](https://digitalcoinprice.com/), [FreeLogoVector](https://www.freelogovectors.net/)
+Image(Logo) Credit's: [CoinMarketCap](https://coinmarketcap.com/), [Coinopsy](https://www.coinopsy.com/), [Wikimedia](https://www.wikimedia.org/), [FreeLogoVector](https://www.freelogovectors.net/)
